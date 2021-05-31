@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 import telegram_send
 import time
 
-
+PATH = "root/123/chromedriver"
 chrome_options = Options()
 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
 chrome_options.add_experimental_option('useAutomationExtension', False)
@@ -12,7 +12,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 n = 0
 telegram_send.send(messages=["Starting .."])
 while 1:
-	driver = webdriver.Chrome(options=chrome_options)
+	driver = webdriver.Chrome(PATH,options=chrome_options)
 	driver.get("https://altex.ro/console-ps5/cpl/")
 	time.sleep(1)
 	try:
